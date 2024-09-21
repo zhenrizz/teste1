@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Você é Linda!</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            background-color: #ffe6e6; /* Fundo claro */
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            color: #ff0000; /* Título em vermelho */
+        }
+        .button {
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            background-color: #ff4d4d; /* Botões em vermelho */
+            color: white; /* Texto dos botões em branco */
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #ff1a1a; /* Vermelho mais escuro ao passar o mouse */
+        }
+    </style>
+</head>
+<body>
+    <h1>Sabia que você é linda?</h1>
+    <button id="sim" class="button" onclick="redirectToMusic()">Sim</button>
+    <button id="nao" class="button" onclick="moveButton()">Não</button>
+
+    <script>
+        function redirectToMusic() {
+            window.location.href = 'https://www.youtube.com/watch?v=Zs0tcD7LpuI'; // Substitua pelo link da sua música
+        }
+
+        function moveButton() {
+            const button = document.getElementById('nao');
+            const randomX = Math.floor(Math.random() * window.innerWidth - 100);
+            const randomY = Math.floor(Math.random() * window.innerHeight - 50);
+            button.style.position = 'absolute';
+            button.style.left = randomX + 'px';
+            button.style.top = randomY + 'px';
+        }
+    </script>
+</body>
+</html>
